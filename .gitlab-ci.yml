@@ -1,0 +1,8 @@
+stages:
+  - verify
+
+hello_pipeline:
+  stage: verify
+  script:
+    - echo "Hello from GitLab CI/CD"
+    - echo "Pipeline is working"
