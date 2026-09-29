@@ -1,11 +1,24 @@
-name: CI Hello
+name: Build Test Artifact
 
 on:
   push:
 
 jobs:
-  hello:
+  build-test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Print greeting
-        run: echo "Hello from GitHub Actions"
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build application
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: hello-build
+          path: dist/

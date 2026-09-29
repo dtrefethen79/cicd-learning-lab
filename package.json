@@ -1,0 +1,8 @@
+{
+  "name": "cicd-learning-lab",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "build": "mkdir -p dist && cp app.js dist/app.js"
+  }
+}
