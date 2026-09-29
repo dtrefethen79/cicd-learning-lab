@@ -1,24 +1,12 @@
-name: Build Test Artifact
-
 on:
   push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  build-test:
+  default-branch-only:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v6
-
-      - name: Run tests
-        run: npm test
-
-      - name: Build application
-        run: npm run build
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v6
-        with:
-          name: hello-build
-          path: dist/
+      - run: echo "This runs only on the default branch"
