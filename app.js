@@ -1,5 +1,5 @@
 function greeting() {
-  return "Hello, CI/CD!";
+  return "Hello, CI/CD!!";
 }
 
 module.exports = { greeting };
