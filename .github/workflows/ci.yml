@@ -2,7 +2,7 @@ on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]d
+    branches: [main]
 
 jobs:
   default-branch-only:
